@@ -1,0 +1,26 @@
+// Place all the styles related to the articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import url('https://use.fontawesome.com/releases/v5.6.3/css/all.css');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+  font-family: 'Roboto Slab', serif;
+}
+
+p {
+ font-weight: lighter;
+}
+
+.container {
+  width: 800px;
+}
+
+i {
+  font-size: 18px;
+  color: #376996;
+}

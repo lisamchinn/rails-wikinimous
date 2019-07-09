@@ -1,0 +1,14 @@
+<div class="container d-flex align-items-center py-3 border-bottom">
+  <h2><%= @article.title%><h2>
+  <%= link_to edit_article_path do %>
+    <i class="fas fa-pencil-alt"></i>
+  <% end %>
+  <%= link_to article_path(@article), method: :delete, data: { confirm: "Are you sure you want to delete this article?" } do %>
+    <i class="fas fa-trash"></i>
+  <% end %>
+</div>
+
+<div class="container">
+<img src="http://lorempixel.com/800/300/city/" alt="random_city_pic">
+<p><%= @article.content%></p>
+</div>
