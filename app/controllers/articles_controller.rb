@@ -1,12 +1,11 @@
 class ArticlesController < ApplicationController
+  before_action :find_article, only: [:show, :edit, :update, :destroy]
 
   def index
     @articles = Article.all
   end
 
-  def show
-    @article = Article.find(params[:id])
-  end
+  def show; end
 
   def new
     @article = Article.new
@@ -17,18 +16,14 @@ class ArticlesController < ApplicationController
     redirect_to articles_path
   end
 
-  def edit
-    @article = Article.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @article = Article.find(params[:id])
     @article.update(article_params)
     redirect_to article_path(@article)
   end
 
   def destroy
-    @article = Article.find(params[:id])
     @article.destroy
     redirect_to articles_path
   end
@@ -38,4 +33,22 @@ class ArticlesController < ApplicationController
   def article_params
     params.require(:article).permit(:title, :content)
   end
+
+  def find_article
+    @article = Article.find(params[:id])
+  end
 end
+
+# do it in the front end using Javascript (prevent clicking on submit
+# unless it is capitalizecd
+# validate in the model has to be capitalized
+# actually change it here
+
+# def create
+#   raise
+
+#   article = Article.new(article_params)
+#   article.title = article.title.capitalize
+#   article.save
+#   redirect_to articles_path
+# end
